@@ -8,7 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 const routes: Routes = [
   {path: 'home', component: PokeTableComponent},
   {path: 'pokeDetail/:id', component: PokeDetailComponent},
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path: '**',pathMatch: 'full', redirectTo: 'home'},

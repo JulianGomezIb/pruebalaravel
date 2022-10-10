@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class PokemonService {
   baseUrl=environment.baseUrl;
-
+  private SERVICE_URL = 'https://servicepokemon.000webhostapp.com/api'
 
   httpOptions: any;
 
@@ -18,12 +18,19 @@ export class PokemonService {
     return this.http.get<any>(`${this.baseUrl}/pokemon/${index}`);
   }
   login(user:any): Observable<any>{
-    let serviceUrl = 'https://servicepokemon.000webhostapp.com/api/post/logim/user';
+    let serviceUrl = this.SERVICE_URL + '/post/login/user';
     this.generateRequestParams(user);
+    console.log(this.httpOptions);
 
-    return this.http.post<any>(serviceUrl, this.httpOptions);
+    return this.http.post(serviceUrl, this.httpOptions);
   }
+  register(user:any): Observable<any>{
+    let serviceUrl = this.SERVICE_URL + 'post/create/user';
+    this.generateRequestParams(user);
+    console.log(this.httpOptions);
 
+    return this.http.post(serviceUrl, this.httpOptions);
+  }
   private generateRequestParams(param: any) {
     this.httpOptions = {
       header: new HttpHeaders(),

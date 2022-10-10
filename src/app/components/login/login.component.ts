@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,16 +12,20 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class LoginComponent implements OnInit {
 
   loginFrom!:FormGroup;
+  link:string='';
 
-  constructor(fb: FormBuilder,private pokeService: PokemonService, private router: Router) {
+  constructor(fb: FormBuilder,private pokeService: PokemonService, private router: Router, private http: HttpClient) {
     this.loginFrom = fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
+
   }
 
   ngOnInit(): void {
+
   }
+
   login(){
     var user:any={
       "email":this.loginFrom.controls['email'].value,
@@ -31,10 +36,12 @@ export class LoginComponent implements OnInit {
     this.pokeService.login(user).subscribe(
       res =>{
       console.log(res);
-
         }
     )
-    console.log("login");
 
+
+  }
+  getRegister(){
+    this.router.navigateByUrl(`register`);
   }
 }
