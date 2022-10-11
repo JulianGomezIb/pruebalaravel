@@ -18,20 +18,20 @@ export class PokemonService {
   getPokemon(index:number){
     return this.http.get<any>(`${this.baseUrl}/pokemon/${index}`);
   }
-  login(user:any): Observable<any>{
-    let serviceUrl = this.SERVICE_URL + '/post/login/user';
-    this.generateRequestParams(user);
-    console.log(this.httpOptions);
+  // login(user:any): Observable<any>{
+  //   let serviceUrl = this.SERVICE_URL + '/post/login/user';
+  //   this.generateRequestParams(user);
+  //   console.log(this.httpOptions);
 
-    return this.http.post(serviceUrl, this.httpOptions);
-  }
-  register(user:any): Observable<any>{
-    let serviceUrl = this.SERVICE_URL + 'post/create/user';
-    this.generateRequestParams(user);
-    console.log(this.httpOptions);
+  //   return this.http.post(serviceUrl, this.httpOptions);
+  // }
+  // register(user:any): Observable<any>{
+  //   let serviceUrl = this.SERVICE_URL + 'post/create/user';
+  //   this.generateRequestParams(user);
+  //   console.log(this.httpOptions);
 
-    return this.http.post(serviceUrl, this.httpOptions);
-  }
+  //   return this.http.post(serviceUrl, this.httpOptions);
+  // }
   private generateRequestParams(param: any) {
     this.httpOptions = {
       header: new HttpHeaders(),
