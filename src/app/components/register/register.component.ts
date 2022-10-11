@@ -38,11 +38,11 @@ export class RegisterComponent implements OnInit {
     }
     console.log(user);
 
-    this.pokeService.login(user).subscribe(
-      res =>{
-      console.log(res);
-        }
-    )
+    // this.pokeService.register(user).subscribe(
+    //   res =>{
+    //   console.log(res);
+    //     }
+    // )
   }
 
 }

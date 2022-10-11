@@ -33,11 +33,11 @@ export class LoginComponent implements OnInit {
     }
     console.log(user);
 
-    this.pokeService.login(user).subscribe(
-      res =>{
-      console.log(res);
-        }
-    )
+    // this.pokeService.login(user).subscribe(
+    //   res =>{
+    //   console.log(res);
+    //     }
+    // )
 
 
   }

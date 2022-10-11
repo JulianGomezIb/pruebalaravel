@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class PokemonService {
 
-  baseUrl=environment.baseUrl;
+  baseUrl='https://pokeapi.co/api/v2';
   private SERVICE_URL = 'https://servicepokemon.000webhostapp.com/api'
 
   httpOptions: any;
